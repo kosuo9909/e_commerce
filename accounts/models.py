@@ -45,6 +45,7 @@ class Profile(models.Model):
         verbose_name_plural = 'Profiles'
 
     first_name = models.CharField(
+        verbose_name='First Name',
         max_length=30,
         null=True,
         blank=True,
@@ -55,6 +56,7 @@ class Profile(models.Model):
     )
 
     last_name = models.CharField(
+        verbose_name='Last Name',
         null=True,
         blank=True,
         max_length=30,
@@ -67,11 +69,13 @@ class Profile(models.Model):
     user = models.OneToOneField(CustomUserModel, on_delete=models.CASCADE, primary_key=True, )
 
     address = models.CharField(
+        verbose_name='Address',
         max_length=200,
         blank=True,
     )
 
     postcode = models.IntegerField(
+        verbose_name='Postcode',
         blank=True,
         default=0000,
         validators=[
