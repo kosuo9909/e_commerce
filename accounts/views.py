@@ -1,9 +1,10 @@
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from accounts.forms import RegisterForm
+from accounts.models import Profile
 
 
 class LoginUser(LoginView):
@@ -16,6 +17,7 @@ class LoginUser(LoginView):
     def form_valid(self, form):
         return super(LoginUser, self).form_valid(form)
 
+
 class RegisterUser(CreateView):
     template_name = 'register.html'
     form_class = RegisterForm
@@ -26,5 +28,11 @@ class RegisterUser(CreateView):
         login(self.request, self.object)
         return valid
 
+
 class SignOut(LogoutView):
     next_page = reverse_lazy('index')
+
+
+class ProfileView(DetailView):
+    template_name = 'profile.html'
+    model = Profile
