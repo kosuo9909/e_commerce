@@ -32,7 +32,7 @@ class CustomUserModel(AbstractBaseUser, PermissionsMixin):
     )
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = [ ]
+    REQUIRED_FIELDS = []
 
     objects = CustomUserManager()
 
@@ -71,6 +71,14 @@ class Profile(models.Model):
         blank=True,
     )
 
+    postcode = models.IntegerField(
+        blank=True,
+        default=0000,
+        validators=[
+            validators.MinValueValidator(4),
+        ]
+    )
+
     def __str__(self):
         return self.first_name + self.last_name
 
@@ -79,4 +87,3 @@ class Profile(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
-
