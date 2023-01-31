@@ -8,7 +8,7 @@
             {% if request.user.is_authenticated %}
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'index' %}">Products</a></li>
-                <li><a href="{% url 'index' %}">Account</a></li>
+                <li><a href="{% url 'profile' pk=request.user.pk %}">Account</a></li>
                 <li><a href="{% url 'index' %}">Contact</a></li>
                 <li><a href="{% url 'index' %}">About</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>

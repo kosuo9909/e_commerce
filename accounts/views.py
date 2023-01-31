@@ -1,10 +1,10 @@
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView, UpdateView
-
-from accounts.forms import RegisterForm, ProfileForm
-from accounts.models import Profile, CustomUserModel
+from django.views.generic import CreateView, UpdateView
+from accounts.forms import RegisterForm
+from accounts.models import Profile
 
 
 class LoginUser(LoginView):
@@ -29,19 +29,26 @@ class RegisterUser(CreateView):
         return valid
 
 
+@login_required
 class SignOut(LogoutView):
     next_page = reverse_lazy('index')
 
 
+@login_required
 class ProfileView(UpdateView):
     template_name = 'profile-test.html'
     model = Profile
 
     fields = ('first_name', 'last_name', 'address', 'postcode')
 
+    def form_valid(self, form):
+        print(f'worked, here is the form {form}')
+        return super(ProfileView, self).form_valid(form)
 
-class UpdateProfile(DetailView):
-    template_name = 'profile.html'
-    model = Profile
+    def get_success_url(self):
+        return reverse_lazy('profile', kwargs={'pk': self.request.user.pk})
 
-    fields = ('first_name', 'last_name', 'age', 'profileimg', 'location')
+    def form_invalid(self, form):
+        print('ERRORRRRR')
+        print(form)
+        return super(ProfileView, self).form_invalid(form)

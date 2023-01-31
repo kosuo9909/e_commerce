@@ -78,9 +78,7 @@ class Profile(models.Model):
         verbose_name='Postcode',
         blank=True,
         default=0000,
-        validators=[
-            validators.MinValueValidator(4),
-        ]
+
     )
 
     def __str__(self):
