@@ -29,12 +29,12 @@ class RegisterUser(CreateView):
         return valid
 
 
-@login_required
+
 class SignOut(LogoutView):
     next_page = reverse_lazy('index')
 
 
-@login_required
+
 class ProfileView(UpdateView):
     template_name = 'profile-test.html'
     model = Profile
