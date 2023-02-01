@@ -1,9 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+
+
     margin: 0;
-        background: #ffd6d6;
+    background: radial-gradient(#fff, #ffd6d6);
+
 
 }
+
 .navbar {
     display: flex;
     align-items: center;
@@ -24,12 +31,14 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin-right: 20px;}
+    margin-right: 20px;
+}
 
 a {
     text-decoration: none;
     color: #555;
 }
+
 html {
     box-sizing: border-box;
 }
@@ -57,8 +66,8 @@ html {
     text-align: center;
 
     color: #777;
-    background: radial-gradient(#fff, #ffd6d6);
-
+    border: black;
+    border-style: ridge;
 }
 
 .container {
