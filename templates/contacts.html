@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+            <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+<div class="container">
+  <form id="contact" action="" method="post">
+      {% csrf_token %}
+    <h3>Send us a message</h3>
+    <h4>Contact us today, and get reply within 24 hours!</h4>
+    <fieldset>
+        <label>
+            <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+        </label>
+    </fieldset>
+    <fieldset>
+        <label>
+            <input placeholder="Your Email Address" type="email" tabindex="2" required>
+        </label>
+    </fieldset>
+    <fieldset>
+        <label>
+            <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+        </label>
+    </fieldset>
+    <fieldset>
+        <label>
+            <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+        </label>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+
+
+</div>
+</body>
+</html>
+{% endblock %}
