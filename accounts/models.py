@@ -68,7 +68,7 @@ class Profile(models.Model):
 
     user = models.OneToOneField(CustomUserModel, on_delete=models.CASCADE, primary_key=True, )
 
-    address = models.CharField(
+    address = models.TextField(
         verbose_name='Address',
         max_length=200,
         blank=True,

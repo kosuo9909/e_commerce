@@ -14,8 +14,6 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-
-
 }
 
 .navbar {
@@ -67,13 +65,15 @@ p {
 
 .col-2 {
     flex-basis: 50%;
-    min-width: 300px;
+    min-width: 600px;
+    position: page;
 
 }
 
 .col-2 img {
     max-width: 100%;
     padding: 137px 0;
+    min-width: 50%;
 }
 
 .col-2 h1 {
@@ -255,6 +255,20 @@ body {
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
 }
 
+.test-form-new {
+    /*background: #fff;*/
+    width: 500px;
+    margin: 5px auto;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+
+
 .login-form h1 {
     padding: 35px 35px 0 35px;
     font-weight: 300;
@@ -280,6 +294,17 @@ body {
     outline: none;
     -webkit-transition: all .2s;
     transition: all .2s;
+}
+
+.test-form-new input, textarea {
+    font-size: 16px;
+    display: block;
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+    padding: 5px 1px;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    border-radius: 7px;
 }
 
 .login-form .input-field input::-webkit-input-placeholder {
@@ -374,9 +399,6 @@ body {
     flex: 1;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
-}
 
 .nav-pills a.nav-link {
     padding: 15px 20px;
