@@ -2,8 +2,8 @@
 
 A simple project made using Python, Django, PostgreSQL, and HTML templates. It aims to provide e-commerce-based features, including:
 - Register ✅
-- Login/Logout/Update Profile - ✅
-- Add products to a relational database (⏳)
+- Login/Logout/Update Profile ✅
+- Add products to a relational database ✅
 - Add products to Favorites (⏳)
 - Add products to shopping card (⏳)
 - Implement payment system (⏳)
