@@ -9,7 +9,7 @@ from accounts.models import Profile
 
 class LoginUser(LoginView):
     redirect_authenticated_user = True
-    template_name = 'login.html'
+    template_name = 'account/login.html'
 
     def get_success_url(self):
         return reverse_lazy('index')
@@ -19,7 +19,7 @@ class LoginUser(LoginView):
 
 
 class RegisterUser(CreateView):
-    template_name = 'register.html'
+    template_name = 'account/register.html'
     form_class = RegisterForm
     success_url = reverse_lazy('index')
 
@@ -36,7 +36,7 @@ class SignOut(LogoutView):
 
 
 class ProfileView(UpdateView):
-    template_name = 'profile-test.html'
+    template_name = 'account/profile.html'
     model = Profile
 
     fields = ('first_name', 'last_name', 'address', 'postcode')
