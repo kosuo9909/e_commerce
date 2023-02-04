@@ -1,4 +1,7 @@
+from django.contrib.auth import get_user_model
 from django.db import models
+
+user_model = get_user_model()
 
 
 class Product(models.Model):
@@ -21,7 +24,6 @@ class Product(models.Model):
 
     image = models.ImageField(
         default='defaults/default_product.png',
-        upload_to='product_photos',
         blank=True,
         null=True,
         verbose_name='Product Photos',
@@ -29,3 +31,9 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.price} USD'
+
+
+class ShoppingCart(models.Model):
+
+    user = models.ForeignKey(user_model, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)

@@ -10,6 +10,7 @@ from accounts.managers import CustomUserManager
 from accounts.validators import validate_letters
 
 
+
 class CustomUserModel(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name_plural = 'Users'
@@ -30,6 +31,7 @@ class CustomUserModel(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         unique=True,
     )
+
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

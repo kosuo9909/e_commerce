@@ -15,15 +15,18 @@
     </head>
 
     <div class="small-container">
-        <h2 class="title">Featured Products</h2>
+        <h2 class="title">You have {{ cart.count }} items in your shopping cart.</h2>
+    <h3 style="text-align: center; font-size: 24px; color: black">Total: ${{ amount }}</h3>
+
         <div class="row">
-            {% for product in products %}
-                <div class="col-4" id="{{ product.pk }}">
-                    <img src="{% static product.image.url %}">
-                    <h4>{{ product.name }}</h4>
-                    <p style="font-size: 16px; font-weight: bolder">${{ product.price }}</p>
-                    <a href="{% url 'add_to_cart' product_pk=product.pk %}">
-                    <p class="add-to-cart">Add to cart</p>
+            {% for item in cart %}
+                <div class="col-4" id="{{ item.product.pk }}">
+                    <img src="{% static item.product.image.url %}">
+                    <h4>{{ item.product.name }}</h4>
+                    <p style="font-size: 16px; font-weight: bolder">${{ item.product.price }}</p>
+                    <a href="{% url 'remove from cart' product_pk=item.product.pk %}">
+
+                    <p class="add-to-cart">Remove from cart</p>
                     </a>
                     <div class="rating">
                         <i class="fa fa-star"></i>
@@ -36,6 +39,4 @@
             {% endfor %}
         </div>
     </div>
-
-
 {% endblock %}

@@ -12,6 +12,7 @@
                 <li><a href="{% url 'contact' %}">Contact</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="{% url 'show cart' %}"> <img src="{% static 'images/cart.png' %}" width="30px" height="30px" alt=""></a> </li>
             {% else %}
 
                 <li><a href="{% url 'index' %}">Home</a></li>
@@ -23,7 +24,7 @@
             {% endif %}
         </ul>
     </nav>
-    <img src="{% static 'images/cart.png' %}" width="30px" height="30px" alt="">
+
 </div>
 
 {% block content %}

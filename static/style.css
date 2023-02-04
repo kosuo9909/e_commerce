@@ -551,5 +551,18 @@ fieldset {
 :-ms-input-placeholder {
     color: #888;
 }
+
 /*-------------- ABOUT US -----------------*/
+
+.add-to-cart {
+    position: initial;
+    font-weight: bolder;
+    font-size: 20px !important;
+}
+
+
+.add-to-cart:hover {
+    color: red;
+    font-size: 44px;
+}
 
