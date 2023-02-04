@@ -24,7 +24,6 @@ class Product(models.Model):
 
     image = models.ImageField(
         default='defaults/default_product.png',
-        upload_to='product_photos',
         blank=True,
         null=True,
         verbose_name='Product Photos',
@@ -36,5 +35,5 @@ class Product(models.Model):
 
 class ShoppingCart(models.Model):
 
-    user = models.ManyToManyField(user_model)
-    product = models.ManyToManyField(Product)
+    user = models.ForeignKey(user_model, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
