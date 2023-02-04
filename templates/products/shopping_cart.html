@@ -15,7 +15,9 @@
     </head>
 
     <div class="small-container">
-        <h2 class="title">Items in your cart - {{ cart.count }}</h2>
+        <h2 class="title">You have {{ cart.count }} items in your shopping cart.</h2>
+    <h3 style="text-align: center; font-size: 24px; color: black">Total: ${{ amount }}</h3>
+
         <div class="row">
             {% for item in cart %}
                 <div class="col-4" id="{{ item.product.pk }}">
