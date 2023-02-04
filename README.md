@@ -5,7 +5,8 @@ A simple project made using Python, Django, PostgreSQL, and HTML templates. It a
 - Login/Logout/Update Profile ✅
 - Add products to a relational database ✅
 - Add products to Favorites (⏳)
-- Add products to shopping card (⏳)
+- Add products to shopping cart ✅
+- Remove products from shopping cart ✅
 - Implement payment system (⏳)
 - Contact Us using Celery (⏳)
 - Implement Django Rest API (⏳)
