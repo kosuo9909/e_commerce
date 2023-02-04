@@ -35,7 +35,7 @@ def add_to_cart(request, product_pk):
 def show_cart(request):
     current_cart = ShoppingCart.objects.filter(user=request.user)
     total_price = [int(x.product.price) for x in current_cart]
-    summed_price= sum(total_price)
+    summed_price = sum(total_price)
     context = {
         'cart': current_cart,
         'amount': summed_price,
@@ -63,3 +63,13 @@ def remove_from_cart(request, product_pk):
         'amount': summed_price,
     }
     return render(request, template_name='products/shopping_cart.html', context=context)
+
+
+def show_on_sale(request):
+    items_on_sale = Product.objects.filter(on_sale=True)
+
+    context = {
+        'products': items_on_sale,
+    }
+
+    return render(request, template_name='products/products.html', context=context)

@@ -15,15 +15,28 @@
     </head>
 
     <div class="small-container">
-        <h2 class="title">Featured Products</h2>
+        <a href="{% url 'products' %}"> <h2 class="title-1">View Featured Products</h2> </a>
+         <a href="{% url 'show sale' %}"> <h2 class="title-1">View Products on Sale</h2></a>
         <div class="row">
             {% for product in products %}
                 <div class="col-4" id="{{ product.pk }}">
                     <img src="{% static product.image.url %}">
                     <h4>{{ product.name }}</h4>
-                    <p style="font-size: 16px; font-weight: bolder">${{ product.price }}</p>
+                    {% if product.on_sale %}
+                        <p style="font-size: 16px; font-weight: bolder; text-decoration: line-through">
+                            ${{ product.old_price }}</p>
+                         <p style="font-size: 18px; font-weight: bolder; color: red">
+                            ${{ product.price }}</p>
+
+
+
+                    {% else %}
+                        <p style="font-size: 16px; font-weight: bolder;">${{ product.price }}</p>
+
+                    {% endif %}
                     <a href="{% url 'add_to_cart' product_pk=product.pk %}">
-                    <p class="add-to-cart">Add to cart</p>
+                        <p class="add-to-cart">Add to cart</p>
+
                     </a>
                     <div class="rating">
                         <i class="fa fa-star"></i>

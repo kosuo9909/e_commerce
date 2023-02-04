@@ -16,6 +16,8 @@ class Product(models.Model):
         null=False,
     )
 
+    old_price = models.PositiveIntegerField(blank=True, null=True)
+
     description = models.CharField(
         blank=True,
         null=True,
@@ -28,6 +30,10 @@ class Product(models.Model):
         null=True,
         verbose_name='Product Photos',
     )
+
+    on_sale = models.BooleanField(default=False)
+
+    featured = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.name} - {self.price} USD'
