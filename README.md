@@ -1,6 +1,6 @@
 # e_commerce
 
-A simple project made using Python, Django, PostgreSQL, and HTML templates. It aims to provide e-commerce-based features, including:
+A simple project made using Python, Django, SQLite3, and HTML templates. It aims to provide e-commerce-based features, including:
 - Register ✅
 - Login/Logout/Update Profile ✅
 - Add products to a relational database ✅
