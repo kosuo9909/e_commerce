@@ -1,4 +1,7 @@
+from django.contrib.auth import get_user_model
 from django.db import models
+
+user_model = get_user_model()
 
 
 class Product(models.Model):
@@ -29,3 +32,9 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.price} USD'
+
+
+class ShoppingCart(models.Model):
+
+    user = models.ManyToManyField(user_model)
+    product = models.ManyToManyField(Product)
