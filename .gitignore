@@ -10,7 +10,6 @@ media
 *.bak 
 
 product_photos/
-products/
 static/
 
 # If you are using PyCharm # 
