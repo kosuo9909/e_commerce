@@ -35,6 +35,8 @@ class Product(models.Model):
 
     featured = models.BooleanField(default=False)
 
+    number_of_item = models.IntegerField(default=1)
+
     def __str__(self):
         return f'{self.name} - {self.price} USD'
 
