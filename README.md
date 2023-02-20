@@ -4,12 +4,9 @@ A simple project made using Python, Django, SQLite3, and HTML templates. It aims
 - Register ✅
 - Login/Logout/Update Profile ✅
 - Add products to a relational database ✅
-- Add products to Favorites (⏳)
 - Add products to shopping cart ✅
 - Remove products from shopping cart ✅
-- Implement payment system (⏳)
-- Contact Us using Celery (⏳)
-- Implement Django Rest API (⏳)
+
 
 
 ![alt text](https://i.imgur.com/fqi7HBI.png)
